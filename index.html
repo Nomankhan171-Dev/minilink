@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinyLink — URL Shortener</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand"><span>T</span>TinyLink</div>
+    <nav><a href="#features">Features</a><a href="#history">History</a></nav>
+    <button id="clearAllBtn" class="ghost">Clear History</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">FAST • CLEAN • SIMPLE</p>
+        <h1>Short links.<br><em>Big possibilities.</em></h1>
+        <p>Create clean, easy-to-share short links in seconds with a modern TinyURL-style frontend.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div><small>URL SHORTENER</small><h2>Make your link tiny</h2></div><span class="ready">Ready</span></div>
+        <form id="shortenForm">
+          <label>Paste your long URL</label>
+          <input id="longUrl" type="url" placeholder="https://example.com/very-long-link" required />
+          <label>Custom alias <span>(optional)</span></label>
+          <div class="alias"><b>tiny.link/</b><input id="customAlias" maxlength="24" placeholder="my-link" /></div>
+          <button type="submit" class="primary">Shorten URL →</button>
+        </form>
+        <div id="resultBox" class="result hidden"><div><small>Your short link</small><a id="shortLink" target="_blank" rel="noopener noreferrer"></a></div><button id="copyBtn">Copy</button></div>
+        <p id="message" class="message"></p>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <p class="eyebrow">WHY TINYLINK</p><h2>Everything you need, nothing you don't.</h2>
+      <div class="grid">
+        <article><div class="icon">⚡</div><h3>Instant links</h3><p>Create demo short links instantly.</p></article>
+        <article><div class="icon">✦</div><h3>Custom aliases</h3><p>Make memorable link names for your URLs.</p></article>
+        <article><div class="icon">▣</div><h3>Local history</h3><p>Recent links stay saved in your browser.</p></article>
+      </div>
+    </section>
+
+    <section id="history" class="section">
+      <div class="history-head"><div><p class="eyebrow">RECENT LINKS</p><h2>Your link history</h2></div><span id="historyCount" class="pill">0 links</span></div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+
+    <section class="notice">
+      <div><p class="eyebrow">FRONTEND DEMO</p><h2>HTML, CSS & JavaScript only.</h2></div>
+      <p>This version is for frontend/portfolio use. Real public URL shortening needs a backend and database.</p>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span>T</span>TinyLink</div><p>Frontend URL Shortener Demo</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
